@@ -173,7 +173,7 @@
 		};
 		
 		bot.commands.randomSicCommand = {
-			command: 'randomSic',  
+			command: 'randomsic',  
 			rank: 'user', 
 			type: 'exact',
 			functionality: function (chat, cmd) {
@@ -198,7 +198,7 @@
 							API.sendChat("@" + randomUser + ", GRRR!");
 							break;
 						case 3:
-							API.sendChat("@" + randomUser + ", MEOW!!1 Wait that didn't come out right!");
+							API.sendChat("@" + randomUser + ", MEOW!! Wait that didn't come out right!");
 							break;
 					}
 				}
@@ -260,7 +260,7 @@
 				if (!bot.commands.executable(this.rank, chat)) return void (0);
 				else {
 					var msg = chat.message.substr(cmd.length + 1);
-					API.sendChat("Woof Woof! Grrrr! " + msg);
+					API.sendChat("Woof Woof! Grrrr!  " + msg);
 				}
 			}
 		};
