@@ -260,7 +260,7 @@
 				if (!bot.commands.executable(this.rank, chat)) return void (0);
 				else {
 					var msg = chat.message.substr(cmd.length + 1);
-					API.sendChat("Woof Woof! Grrrr!" + msg);
+					API.sendChat("Woof Woof! Grrrr! " + msg);
 				}
 			}
 		};
