@@ -380,7 +380,7 @@
     localStorage.setItem("cujothek9settings", JSON.stringify({
 		botName: "cujothek9",
 		language: "english",
-		chatLink: "https://rawgit.com/cujothek9/custom/master/lang/en.jsonlang/en.json",
+		chatLink: "https://rawgit.com/cujothek9/custom/master/lang/en.json",
 		scriptLink: "https://rawgit.com/cujothek9/source/master/cujothek9.js",
 		roomLock: false, // Requires an extension to re-load the script
 		startupCap: 1, // 1-200
