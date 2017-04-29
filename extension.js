@@ -50,6 +50,31 @@
 			}
 		};
 		
+		bot.commands.meowcommand = {
+			command: 'meow',
+			rank: 'user',
+			type: 'exact',
+			functionality: function(chat, cmd) {
+				if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+				if (!bot.commands.executable(this.rank, chat)) return void (0);
+				else {
+					var randomInt = Math.floor((Math.random() * 3) + 1);
+					
+					switch (randomInt) {
+						case 1:
+							API.sendChat("MEOOWWW!");
+							break;
+						case 2:
+							API.sendChat("Meow Meow!");
+							break;
+						case 3:
+							API.sendChat("Meow, Meow Meow Meow Meow!");
+							break;
+					}	
+				}
+			}
+		};
+		
 		bot.commands.nevereverCommand = {
 			command: 'neverever',
 			rank: 'host',
