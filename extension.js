@@ -171,6 +171,39 @@
 				}
 			}
 		};
+		
+		bot.commands.randomSicCommand = {
+			command: 'randomSic',  
+			rank: 'user', 
+			type: 'exact',
+			functionality: function (chat, cmd) {
+				if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+				if (!bot.commands.executable(this.rank, chat)) return void (0);
+				else {
+					var randomInt = Math.floor((Math.random() * 3) + 1);
+					var roomUsers = [];
+					var randomUserPos = Math.floor((Math.random() * bot.room.users.length) + 1);
+					var randomUser;
+					for ( var i = 0; i < bot.room.users.length; i++) {
+						roomUsers.push(bot.room.users[i].username);
+					}
+					
+					randomUser = roomUsers[randomUserPos].toString();
+					
+					switch (randomInt) {
+						case 1:
+							API.sendChat("@" + randomUser + ", Woof Woof!");
+							break;
+						case 2:
+							API.sendChat("@" + randomUser + ", GRRR!");
+							break;
+						case 3:
+							API.sendChat("@" + randomUser + ", MEOW!!1 Wait that didn't come out right!");
+							break;
+					}
+				}
+			}
+		};
 
 		bot.commands.rollCommand = {
 			command: 'roll', 
@@ -218,6 +251,19 @@
 			}
 		};
 
+		bot.commands.sicCommand = {
+			command: 'sic',
+			rank: 'user',
+			type: 'startsWith',
+			functionality: function (chat, cmd) {
+				if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+				if (!bot.commands.executable(this.rank, chat)) return void (0);
+				else {
+					var msg = chat.message.substr(cmd.length + 1);
+					API.sendChat("Woof Woof! Grrrr!" + msg);
+				}
+			}
+		};
 	
 		bot.commands.talkcommand = {
 			command: 'talk',
